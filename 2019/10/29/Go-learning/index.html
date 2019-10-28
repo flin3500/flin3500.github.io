@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Lin website">
 <meta property="og:description" content="https:&#x2F;&#x2F;tour.golang.org&#x2F;basics&#x2F;1 PackagesSample: 12345678910package mainimport (	&quot;fmt&quot;	&quot;math&#x2F;rand&quot;)func main() &amp;#123;	fmt.Println(&quot;My favorite number is&quot;, rand.Intn(10))&amp;#125;  Output: 1My favorite nu">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T17:11:22.801Z">
+<meta property="og:updated_time" content="2019-10-28T17:29:57.539Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lin website" type="application/atom+xml">
@@ -251,8 +251,10 @@
 <p>Output:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="literal">false</span> <span class="literal">false</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>The var statement declares a list of variables; as in function argument lists, the type is last.</li>
-<li>A var statement can be at package or function level. We see both in this example.</li>
+<li><p>The var statement declares a list of variables; as in function argument lists, the type is last.</p>
+</li>
+<li><p>A var statement can be at package or function level. We see both in this example.</p>
+</li>
 </ul>
 <hr>
 <h2 id="Variables-with-initializers"><a href="#Variables-with-initializers" class="headerlink" title="Variables with initializers"></a>Variables with initializers</h2><p>Sample:</p>
@@ -261,8 +263,10 @@
 <p>Output:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="literal">true</span> <span class="literal">false</span> no!</span><br></pre></td></tr></table></figure>
 <ul>
-<li>A var declaration can include initializers, one per variable.</li>
-<li>If an initializer is present, the type can be omitted; the variable will take the type of the initializer.</li>
+<li><p>A var declaration can include initializers, one per variable.</p>
+</li>
+<li><p>If an initializer is present, the type can be omitted; the variable will take the type of the initializer.</p>
+</li>
 </ul>
 <hr>
 <h2 id="Short-variable-declarations"><a href="#Short-variable-declarations" class="headerlink" title="Short variable declarations"></a>Short variable declarations</h2><p>Sample:</p>
@@ -302,6 +306,38 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 4 5</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Unlike in C, in Go assignment between items of different type requires an explicit conversion.</li>
+</ul>
+<hr>
+<h2 id="Type-inference"><a href="#Type-inference" class="headerlink" title="Type inference"></a>Type inference</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	v := <span class="number">3.3</span> <span class="comment">// change me!</span></span><br><span class="line">	fmt.Printf(<span class="string">"v is of type %T\n"</span>, v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v is of type float64</span><br></pre></td></tr></table></figure>
+<ul>
+<li>When declaring a variable without specifying an explicit type (either by using the := syntax or var = expression syntax), the variable’s type is inferred from the value on the right hand side.</li>
+</ul>
+<hr>
+<h2 id="Constants"><a href="#Constants" class="headerlink" title="Constants"></a>Constants</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Pi = <span class="number">3.14</span></span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	<span class="keyword">const</span> World = <span class="string">"World"</span></span><br><span class="line">	fmt.Println(<span class="string">"Hello"</span>, World)</span><br><span class="line">	fmt.Println(<span class="string">"Happy"</span>, Pi, <span class="string">"Day"</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> Truth = <span class="literal">true</span></span><br><span class="line">	fmt.Println(<span class="string">"Go rules?"</span>, Truth)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hello World</span><br><span class="line">Happy <span class="number">3.14</span> Day</span><br><span class="line">Go rules? <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Constants are declared like variables, but with the const keyword.</p>
+</li>
+<li><p>Constants can be character, string, boolean, or numeric values.</p>
+</li>
+<li><p>Constants cannot be declared using the := syntax.</p>
+</li>
+</ul>
+<hr>
+<h2 id="Numeric-Constants"><a href="#Numeric-Constants" class="headerlink" title="Numeric Constants"></a>Numeric Constants</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	<span class="comment">// Create a huge number by shifting a 1 bit left 100 places.</span></span><br><span class="line">	<span class="comment">// In other words, the binary number that is 1 followed by 100 zeroes.</span></span><br><span class="line">	Big = <span class="number">1</span> &lt;&lt; <span class="number">100</span></span><br><span class="line">	<span class="comment">// Shift it right again 99 places, so we end up with 1&lt;&lt;1, or 2.</span></span><br><span class="line">	Small = Big &gt;&gt; <span class="number">99</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">needInt</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="keyword">int</span> </span>&#123; <span class="keyword">return</span> x*<span class="number">10</span> + <span class="number">1</span> &#125;</span><br><span class="line">func needFloat(x float64) float64 &#123;</span><br><span class="line">	<span class="keyword">return</span> x * <span class="number">0.1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(needInt(Small))</span><br><span class="line">	fmt.Println(needFloat(Small))</span><br><span class="line">	fmt.Println(needFloat(Big))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">21</span></span><br><span class="line"><span class="number">0.2</span></span><br><span class="line"><span class="number">1.2676506002282295e+29</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Numeric constants are high-precision values.</p>
+</li>
+<li><p>An untyped constant takes the type needed by its context.</p>
+</li>
 </ul>
 <hr>
 
