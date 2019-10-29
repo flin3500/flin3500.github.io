@@ -6,13 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | Lin website</title>
+  <title>Go learning Chapter One | Lin website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Lin website">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;10&#x2F;index.html">
+  <meta name="description" content="https:&#x2F;&#x2F;tour.golang.org&#x2F;basics&#x2F;1 PackagesSample: 12345678910package mainimport (	&quot;fmt&quot;	&quot;math&#x2F;rand&quot;)func main() &amp;#123;	fmt.Println(&quot;My favorite number is&quot;, rand.Intn(10))&amp;#125;  Output: 1My favorite nu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go learning Chapter One">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;29&#x2F;golearn1&#x2F;index.html">
 <meta property="og:site_name" content="Lin website">
+<meta property="og:description" content="https:&#x2F;&#x2F;tour.golang.org&#x2F;basics&#x2F;1 PackagesSample: 12345678910package mainimport (	&quot;fmt&quot;	&quot;math&#x2F;rand&quot;)func main() &amp;#123;	fmt.Println(&quot;My favorite number is&quot;, rand.Intn(10))&amp;#125;  Output: 1My favorite nu">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-28T17:29:57.539Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lin website" type="application/atom+xml">
@@ -153,76 +156,323 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-golearn1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/29/golearn2/" class="archive-article-date">
-  	<time datetime="2019-10-29T01:07:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/29/golearn2/">Go learning Chapter Two</a>
+    <h1 class="article-title" itemprop="name">
+      Go learning Chapter One
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/29/golearn1/" class="archive-article-date">
+        
+        <a href="/2019/10/29/golearn1/" class="archive-article-date">
   	<time datetime="2019-10-28T13:34:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/29/golearn1/">Go learning Chapter One</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://tour.golang.org/basics/1" target="_blank" rel="noopener">https://tour.golang.org/basics/1</a></p>
+<h2 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"math/rand"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fmt.Println(<span class="string">"My favorite number is"</span>, rand.Intn(<span class="number">10</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">My favorite number is <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>the package name is the same as the last element of the import path. For instance, the “math/rand” package comprises files that begin with the statement package rand.</li>
+</ul>
+<a id="more"></a>
 
+
+<hr>
+<h2 id="Imports"><a href="#Imports" class="headerlink" title="Imports"></a>Imports</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"math"</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fmt.Printf(<span class="string">"Now you have %g problems.\n"</span>, math.Sqrt(<span class="number">7</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Now you have <span class="number">2.6457513110645907</span> problems.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>import can be divided, but it is good style to use the factored import statement.</li>
+</ul>
+<hr>
+<h2 id="Exported-names"><a href="#Exported-names" class="headerlink" title="Exported names"></a>Exported names</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">--WRONG--</span><br><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"math"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fmt.Println(math.pi)</span><br><span class="line">&#125;</span><br><span class="line">--WRONG--</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">--RIGHT--</span><br><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"math"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fmt.Println(math.Pi)</span><br><span class="line">&#125;</span><br><span class="line">--RIGHT--</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3.141592653589793</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>When importing a package, you can refer only to its captal exported names. Any “unexported” names are not accessible from outside the package.</li>
+</ul>
+<hr>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">add</span><span class="params">(x <span class="keyword">int</span>, y <span class="keyword">int</span>)</span> <span class="keyword">int</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(add(<span class="number">42</span>, <span class="number">13</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">55</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>A function can take zero or more arguments.</li>
+</ul>
+<hr>
+<h2 id="Functions-continued"><a href="#Functions-continued" class="headerlink" title="Functions continued"></a>Functions continued</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">add</span><span class="params">(x, y <span class="keyword">int</span>)</span> <span class="keyword">int</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(add(<span class="number">42</span>, <span class="number">13</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">55</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>When two or more consecutive named function parameters share a type, you can omit the type from all but the last.</li>
+</ul>
+<hr>
+<h2 id="Multiple-results"><a href="#Multiple-results" class="headerlink" title="Multiple results"></a>Multiple results</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">swap</span><span class="params">(x, y <span class="built_in">string</span>)</span> <span class="params">(<span class="built_in">string</span>, <span class="built_in">string</span>)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> y, x</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	a, b := swap(<span class="string">"hello"</span>, <span class="string">"world"</span>)</span><br><span class="line">	fmt.Println(a, b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">world hello</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>A function can return any number of results.</li>
+</ul>
+<hr>
+<h2 id="Named-return-values"><a href="#Named-return-values" class="headerlink" title="Named return values"></a>Named return values</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">split</span><span class="params">(sum <span class="keyword">int</span>)</span> <span class="params">(x, y <span class="keyword">int</span>)</span> </span>&#123;</span><br><span class="line">	x = sum * <span class="number">4</span> / <span class="number">9</span></span><br><span class="line">	y = sum - x</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(split(<span class="number">17</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">7</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Naked return statements should be used only in short functions, as with the example shown here. They can harm readability in longer functions.</li>
+</ul>
+<hr>
+<h2 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line">var c, python, java <span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	var i <span class="keyword">int</span></span><br><span class="line">	fmt.Println(i, c, python, java)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="literal">false</span> <span class="literal">false</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>The var statement declares a list of variables; as in function argument lists, the type is last.</p>
+</li>
+<li><p>A var statement can be at package or function level. We see both in this example.</p>
+</li>
+</ul>
+<hr>
+<h2 id="Variables-with-initializers"><a href="#Variables-with-initializers" class="headerlink" title="Variables with initializers"></a>Variables with initializers</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line">var i, j <span class="keyword">int</span> = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var c, python, java = <span class="literal">true</span>, <span class="literal">false</span>, <span class="string">"no!"</span></span><br><span class="line">	fmt.Println(i, j, c, python, java)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="literal">true</span> <span class="literal">false</span> no!</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>A var declaration can include initializers, one per variable.</p>
+</li>
+<li><p>If an initializer is present, the type can be omitted; the variable will take the type of the initializer.</p>
+</li>
+</ul>
+<hr>
+<h2 id="Short-variable-declarations"><a href="#Short-variable-declarations" class="headerlink" title="Short variable declarations"></a>Short variable declarations</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	var i, j <span class="keyword">int</span> = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">	k := <span class="number">3</span></span><br><span class="line">	c, python, java := <span class="literal">true</span>, <span class="literal">false</span>, <span class="string">"no!"</span></span><br><span class="line">	fmt.Println(i, j, k, c, python, java)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="literal">true</span> <span class="literal">false</span> no!</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Inside a function, the := short assignment statement can be used in place of a var declaration with implicit type.</li>
+<li>Outside a function, every statement begins with a keyword (var, func, and so on) and so the := construct is not available.</li>
+</ul>
+<hr>
+<h2 id="Basic-types"><a href="#Basic-types" class="headerlink" title="Basic types"></a>Basic types</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"math/cmplx"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var (</span><br><span class="line">	ToBe   <span class="keyword">bool</span>       = <span class="literal">false</span></span><br><span class="line">	MaxInt uint64     = <span class="number">1</span>&lt;&lt;<span class="number">64</span> - <span class="number">1</span></span><br><span class="line">	z      complex128 = cmplx.Sqrt(<span class="number">-5</span> + <span class="number">12</span>i)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	fmt.Printf(<span class="string">"Type: %T Value: %v\n"</span>, ToBe, ToBe)</span><br><span class="line">	fmt.Printf(<span class="string">"Type: %T Value: %v\n"</span>, MaxInt, MaxInt)</span><br><span class="line">	fmt.Printf(<span class="string">"Type: %T Value: %v\n"</span>, z, z)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Type: <span class="keyword">bool</span> Value: <span class="literal">false</span></span><br><span class="line">Type: uint64 Value: <span class="number">18446744073709551615</span></span><br><span class="line">Type: complex128 Value: (<span class="number">2</span>+<span class="number">3</span>i)</span><br></pre></td></tr></table></figure>
+
+
+<p>Type:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>  int8  int16  int32  int64</span><br><span class="line">uint uint8 uint16 uint32 uint64 uintptr</span><br><span class="line"></span><br><span class="line">byte <span class="comment">// alias for uint8</span></span><br><span class="line"></span><br><span class="line">rune <span class="comment">// alias for int32</span></span><br><span class="line">     <span class="comment">// represents a Unicode code point</span></span><br><span class="line"></span><br><span class="line">float32 float64</span><br><span class="line"></span><br><span class="line">complex64 complex128</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The int, uint, and uintptr types are usually 32 bits wide on 32-bit systems and 64 bits wide on 64-bit systems. When you need an integer value you should use int unless you have a specific reason to use a sized or unsigned integer type.</li>
+</ul>
+<hr>
+<h2 id="Zero-values"><a href="#Zero-values" class="headerlink" title="Zero values"></a>Zero values</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	var i <span class="keyword">int</span></span><br><span class="line">	var f float64</span><br><span class="line">	var b <span class="keyword">bool</span></span><br><span class="line">	var s <span class="built_in">string</span></span><br><span class="line">	fmt.Printf(<span class="string">"%v %v %v %q\n"</span>, i, f, b, s)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="literal">false</span> <span class="string">""</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The zero value is:0 for numeric types, false for the boolean type, “” for strings.</li>
+</ul>
+<hr>
+<h2 id="Type-conversions"><a href="#Type-conversions" class="headerlink" title="Type conversions"></a>Type conversions</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"math"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	var x, y <span class="keyword">int</span> = <span class="number">3</span>, <span class="number">4</span></span><br><span class="line">	var f float64 = math.Sqrt(float64(x*x + y*y))</span><br><span class="line">	var z uint = uint(f)</span><br><span class="line">	fmt.Println(x, y, z)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 4 5</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Unlike in C, in Go assignment between items of different type requires an explicit conversion.</li>
+</ul>
+<hr>
+<h2 id="Type-inference"><a href="#Type-inference" class="headerlink" title="Type inference"></a>Type inference</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	v := <span class="number">3.3</span> <span class="comment">// change me!</span></span><br><span class="line">	fmt.Printf(<span class="string">"v is of type %T\n"</span>, v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v is of type float64</span><br></pre></td></tr></table></figure>
+<ul>
+<li>When declaring a variable without specifying an explicit type (either by using the := syntax or var = expression syntax), the variable’s type is inferred from the value on the right hand side.</li>
+</ul>
+<hr>
+<h2 id="Constants"><a href="#Constants" class="headerlink" title="Constants"></a>Constants</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Pi = <span class="number">3.14</span></span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	<span class="keyword">const</span> World = <span class="string">"World"</span></span><br><span class="line">	fmt.Println(<span class="string">"Hello"</span>, World)</span><br><span class="line">	fmt.Println(<span class="string">"Happy"</span>, Pi, <span class="string">"Day"</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> Truth = <span class="literal">true</span></span><br><span class="line">	fmt.Println(<span class="string">"Go rules?"</span>, Truth)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hello World</span><br><span class="line">Happy <span class="number">3.14</span> Day</span><br><span class="line">Go rules? <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Constants are declared like variables, but with the const keyword.</p>
+</li>
+<li><p>Constants can be character, string, boolean, or numeric values.</p>
+</li>
+<li><p>Constants cannot be declared using the := syntax.</p>
+</li>
+</ul>
+<hr>
+<h2 id="Numeric-Constants"><a href="#Numeric-Constants" class="headerlink" title="Numeric Constants"></a>Numeric Constants</h2><p>Sample:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	<span class="comment">// Create a huge number by shifting a 1 bit left 100 places.</span></span><br><span class="line">	<span class="comment">// In other words, the binary number that is 1 followed by 100 zeroes.</span></span><br><span class="line">	Big = <span class="number">1</span> &lt;&lt; <span class="number">100</span></span><br><span class="line">	<span class="comment">// Shift it right again 99 places, so we end up with 1&lt;&lt;1, or 2.</span></span><br><span class="line">	Small = Big &gt;&gt; <span class="number">99</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function">func <span class="title">needInt</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="keyword">int</span> </span>&#123; <span class="keyword">return</span> x*<span class="number">10</span> + <span class="number">1</span> &#125;</span><br><span class="line">func needFloat(x float64) float64 &#123;</span><br><span class="line">	<span class="keyword">return</span> x * <span class="number">0.1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(needInt(Small))</span><br><span class="line">	fmt.Println(needFloat(Small))</span><br><span class="line">	fmt.Println(needFloat(Big))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">21</span></span><br><span class="line"><span class="number">0.2</span></span><br><span class="line"><span class="number">1.2676506002282295e+29</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Numeric constants are high-precision values.</p>
+</li>
+<li><p>An untyped constant takes the type needed by its context.</p>
+</li>
+</ul>
+<hr>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/29/golearn1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/10/29/golearn2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Go learning Chapter Two
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -245,8 +495,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
